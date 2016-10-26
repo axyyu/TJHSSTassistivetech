@@ -1,2 +1,4 @@
 # TJHSSTassistivetech
-Website with tutorials for elderly people.
+Website with simple tutorials for elderly people.
+
+2016 October
