@@ -441,3 +441,21 @@ body {
 {
   padding: 100px;
 }
+.bl-button
+{
+  color:white;
+  background-color: black;
+}
+.bl-button:hover,
+.bl-button:focus,
+.bl-button.focus,
+.bl-button:active,
+.bl-button.active,
+.open > .dropdown-toggle.bl-button {
+  color: white;
+  background-color: gray;
+  border-color: black;
+}
+.video-watch-marker {
+  font-size: 50px;
+}
