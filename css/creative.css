@@ -459,3 +459,6 @@ body {
 .video-watch-marker {
   font-size: 50px;
 }
+.watched{
+  color: lightgreen;
+}
