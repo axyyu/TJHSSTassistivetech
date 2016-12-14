@@ -1,0 +1,22 @@
+/* Icon Bar */
+.iconbar{
+    font-size: 50px;
+}
+.watched{
+    color: lightgreen;
+}
+.clickable{
+    cursor: pointer;
+}
+.clickable:hover{
+    color:lightskyblue;
+    /*
+    border-style: solid;
+    border-color: deepskyblue;
+    */
+}
+
+/* Unit Menu Panel */
+.indented{
+    padding-left: 10px;
+}

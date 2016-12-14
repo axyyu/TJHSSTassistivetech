@@ -28,14 +28,15 @@
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" defer></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js" defer></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <script src="js/jquery-3.1.1.min.js" defer></script>
+    <script src="https://www.youtube.com/iframe_api" defer></script>
     <![endif]-->
 
     <!--Custom-->
+    <script src="js/videos.js" defer></script>
     <link href="CSS/style.css" rel="stylesheet">
-
 
 </head>
 
@@ -73,7 +74,7 @@
 <header id="home" class="tutorial-category">
     <div class="header-content">
         <div class="header-content-inner">
-            <h1 id="homeHeading">Get Started</h1>
+            <h1 id="homeHeading">Unit 1</h1>
         </div>
     </div>
 </header>
@@ -82,13 +83,20 @@
     <div class = "container">
         <div class="row">
             <div class="col-sm-3">
-                <h3>Website Use Guide</h3>
+                <h3 class="unitheader">Unit 1 - Phone Basics</h3>
+                <div class="indented">
+                    <h4 class="unitvideos clickable" onclick="changeVideo(this)">Turn On Your Phone</h4>
+                    <h4 class="unitvideos clickable" onclick="changeVideo(this)">Set Up Your Phone 1</h4>
+                    <h4 class="unitvideos clickable" onclick="changeVideo(this)">Set Up Your Phone 2</h4>
+                </div>
             </div>
-            <div class="col-sm-6">
+            <div class="col-sm-8">
                 <div id="video-placeholder"></div>
             </div>
-            <div class="col-sm-2 col-sm-offset-1">
-                <p class="glyphicon glyphicon-ok iconbar"></p>
+            <div class="col-sm-1">
+                <p class="glyphicon glyphicon-repeat iconbar clickable" onclick="beginagain()"></p>
+                <p class="glyphicon glyphicon-list iconbar clickable" onclick="showCheatsheet()"></p>
+                <p class="glyphicon glyphicon-print iconbar clickable" onclick="printDocument()"></p>
             </div>
         </div>
     </div>
@@ -98,19 +106,15 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2 class="section-heading">Begin Learning</h2>
+                <h2 class="section-heading">Next Steps</h2>
                 <br>
             </div>
             <div class="col-lg-4 col-lg-offset-2 text-center">
-                <a href="index.html#tutorials">
-                    <p class="btn btn-default btn-xl sr-button bl-button">Choose Category</p>
-                </a>
+                <p class="btn btn-default btn-xl sr-button bl-button">Choose Category</p>
             </div>
             <br>
             <div class="col-lg-4 text-center">
-                <a href="phoneunit1.html">
-                    <p class="btn btn-default btn-xl sr-button bl-button">Unit 1 - Phone Basics</p>
-                </a>
+                <p class="btn btn-default btn-xl sr-button bl-button">Unit 2 - Texting & Calling</p>
             </div>
         </div>
     </div>
@@ -130,44 +134,6 @@
 
 <!-- Theme JavaScript -->
 <script src="js/creative.js"></script>
-
-<!--Custom Script-->
-<script>
-    var player;
-
-    function onYouTubeIframeAPIReady() {
-        player = new YT.Player('video-placeholder', {
-            width: 560,
-            height: 315,
-            videoId: 'IVx6ZlksMJw',
-            playerVars: {
-                color: 'white'
-            },
-            events: {
-                onReady: initialize
-            }
-        });
-    }
-
-    function initialize(){
-
-        // Update the controls on load
-        updateTimerDisplay();
-
-        // Start interval to update elapsed time display and
-        // the elapsed part of the progress bar every second.
-        time_update_interval = setInterval(function () {
-            updateTimerDisplay();
-        }, 1000)
-
-    }
-    function updateTimerDisplay(){
-        // Update current time text display.
-        if(player.getCurrentTime()>=player.getDuration()){
-            $(".video-watch-marker").addClass("watched");
-        }
-    }
-</script>
 
 </body>
 
