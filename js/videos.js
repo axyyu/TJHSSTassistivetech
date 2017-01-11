@@ -4,7 +4,7 @@
 
 // Dictionary
 var dictionary = {
-    "0":"",
+    "Turn On Your Phone":"bHQqvYy5KYo",
     "1":"",
     "2":"",
     "3":"",
@@ -78,9 +78,10 @@ function onYouTubeIframeAPIReady(videoID) {
     player = new YT.Player('video-placeholder', {
         width: width,
         height: height,
-        videoId: "IVx6ZlksMJw",
         playerVars: {
-            color: 'white'
+            color: 'white',
+            listType:'playlist',
+            list: '<YOURPLAYLISTID>'
         },
         events: {
             'onReady': initialize
@@ -107,12 +108,12 @@ function updateTimerDisplay(){
 }
 function changeVideo(t){
     //FETCH ID FROM DATABASE
-    player.loadVideoById("bHQqvYy5KYo", 5, "large");
+    player.loadVideoById(dictionary[$(t).text()], 5, "large");
 }
 function nextVideo(t){
-
+    //player.loadVideoById(dictionary[$(t).text()], 5, "large");
 }
-function beginagain(){
+function replay(){
 
 }
 function printDocument(){
