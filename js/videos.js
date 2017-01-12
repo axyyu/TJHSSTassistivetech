@@ -3,7 +3,7 @@
  */
 
 // Dictionary
-var dictionary = {
+/*var dictionary = {
     "Turn On Your Phone":"bHQqvYy5KYo",
     "1":"",
     "2":"",
@@ -59,7 +59,15 @@ var dictionary = {
     "52":"",
     "53":"",
     "54":""
-};
+};*/
+var l = [
+  ["Turn On Your Phone","bHQqvYy5KYo"],
+  ["Set Up Your Phone 1","bHQqvYy5KYo"],
+  ["Set Up Your Phone 2","bHQqvYy5KYo"]
+];
+var dictionary = {};
+for(i = 0; i < l.length; i++)
+  dictionary[l[i][0]] = l[i][1];
 
 
 // Set up Youtube
@@ -73,6 +81,13 @@ var beginAgain = false;
 $(document).ready(function(){
     //player.loadVideoById("IVx6ZlksMJw",0);
 });
+
+function linkList(minIndex, maxIndex) {
+  var out = "";
+  for(var i = minIndex; i <= maxIndex; i++)
+    out += '<h4 class="unitvideos clickable" onclick="changeVideo(this)">' + l[i][0] + '</h4>';
+  return out;
+}
 
 function onYouTubeIframeAPIReady(videoID) {
     player = new YT.Player('video-placeholder', {
