@@ -7,9 +7,13 @@
 }
 .clickable{
     cursor: pointer;
+    background-color: #303030;
+    padding: 5px;
+    border-radius: 5px;
 }
 .clickable:hover{
     color:lightskyblue;
+    background-color: #101010; 
     /*
     border-style: solid;
     border-color: deepskyblue;
