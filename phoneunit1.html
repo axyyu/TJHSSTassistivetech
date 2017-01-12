@@ -84,10 +84,23 @@
         <div class="row">
             <div class="col-sm-3">
                 <h3 class="unitheader">Unit 1 - Phone Basics</h3>
-                <div class="indented">
-                    <h4 class="unitvideos clickable" onclick="changeVideo(this)">Turn On Your Phone</h4>
+                <div class="indented" id = "vidHolder">
+                    <script type="text/javascript">
+                      window.onload = function() {
+                        $("#vidHolder").html(linkList(0, 2));
+                        //vidHolder = $("#vidHolder");
+                        selected = null;
+                        $(".unitvideos.clickable").click(function() {
+                          if(selected)
+                            selected.setAttribute("style", ""); 
+                          selected = this;
+                          selected.setAttribute("style", "background-color: #000");
+                        });
+                      };
+                    </script>
+                    <!--<h4 class="unitvideos clickable" onclick="changeVideo(this)">Turn On Your Phone</h4>
                     <h4 class="unitvideos clickable" onclick="changeVideo(this)">Set Up Your Phone 1</h4>
-                    <h4 class="unitvideos clickable" onclick="changeVideo(this)">Set Up Your Phone 2</h4>
+                    <h4 class="unitvideos clickable" onclick="changeVideo(this)">Set Up Your Phone 2</h4>-->
                 </div>
             </div>
             <div class="col-sm-8">
