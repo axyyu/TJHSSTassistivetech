@@ -1,2 +1,9 @@
 node_modules
 bower_components
+.idea/workspace.xml
+
+.idea/modules.xml
+
+.idea/TJHSSTassistivetech.iml
+
+.idea/vcs.xml
