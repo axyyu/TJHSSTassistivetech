@@ -23,21 +23,19 @@
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
     <!-- Theme CSS -->
-    <link href="CSS/creative.css" rel="stylesheet">
-    <link href="CSS/RYPP.css" rel="stylesheet">
+    <link href="css/creative.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js" defer></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js" defer></script>
     <script src="js/jquery-3.1.1.min.js" defer></script>
-    <script src="js/RYPP.js" defer></script>
-    <script src="https://www.youtube.com/iframe_api" defer></script>
     <![endif]-->
 
     <!--Custom-->
     <link href="CSS/style.css" rel="stylesheet">
+
 
 </head>
 
@@ -75,49 +73,31 @@
 <header id="home" class="tutorial-category">
     <div class="header-content">
         <div class="header-content-inner">
-            <h1 id="homeHeading">Unit 1</h1>
+            <h1 id="homeHeading">Under development</h1>
         </div>
     </div>
 </header>
-
-<aside class="bg-dark">
-    <div class = "container">
-        <div id="video-placeholder"></div>
-        <div class="RYPP r4-3" data-playlist="PL7Vr8XNhXsJAKgFY8jlTUAgiMDByR3oaw">
-            <div class="RYPP-video">
-                <div class="RYPP-video-player">
-                    <!-- Will be replaced -->
-                </div>
-            </div>
-            <div class="RYPP-playlist">
-                <header>
-                    <h2 class="_h1 RYPP-title">Playlist title</h2>
-                    <p class="RYPP-desc">Playlist subtitle<a href="#" target="_blank">#hashtag</a></p>
-                </header>
-                <div class="RYPP-items"></div>
-            </div>
-        </div>
-    </div>
-</aside>
 
 <section id="contact">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2 class="section-heading">Next Steps</h2>
+                <h2 class="section-heading">This part of the website will be finished soon!</h2>
+                <br>
             </div>
         </div>
+            <br class="space">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
             </div>
             <div class="col-lg-4 col-lg-offset-2 text-center">
-                <a href="phone.html">
-                    <p class="btn btn-default btn-xl sr-button bl-button">Choose Unit</p>
+                <a href="index.html#tutorials">
+                    <p class="btn btn-default btn-xl sr-button bl-button">Choose Category</p>
                 </a>
             </div>
             <div class="col-lg-4 text-center">
-                <a href="phoneunit2.html">
-                    <p class="btn btn-default btn-xl sr-button bl-button">Unit 2 - Texting & Calling</p>
+                <a href="index.html#contact">
+                    <p class="btn btn-default btn-xl sr-button bl-button">Contact Us</p>
                 </a>
             </div>
         </div>
@@ -138,28 +118,45 @@
 
 <!-- Theme JavaScript -->
 <script src="js/creative.js"></script>
-<script>
-    // Set up Youtube
-    var player;
-    var api_key = 'AIzaSyA1rpTMrNjth1R6-LfLe0UG8v1946nj3Xw';
-    var width = ($(window).width())/12*7;
-    var height = (width/16) * 9;
 
-    $('.RYPP').rypp( api_key );
+<!--Custom Script-->
+<script>
+    var player;
 
     function onYouTubeIframeAPIReady() {
         player = new YT.Player('video-placeholder', {
-            width: width,
-            height: height,
+            width: 560,
+            height: 315,
+            videoId: 'IVx6ZlksMJw',
             playerVars: {
-                autoplay:1,
-                color: 'white',
-                listType:'playlist',
-                list: 'PL7Vr8XNhXsJAKgFY8jlTUAgiMDByR3oaw'
+                color: 'white'
+            },
+            events: {
+                onReady: initialize
             }
         });
     }
+
+    function initialize(){
+
+        // Update the controls on load
+        updateTimerDisplay();
+
+        // Start interval to update elapsed time display and
+        // the elapsed part of the progress bar every second.
+        time_update_interval = setInterval(function () {
+            updateTimerDisplay();
+        }, 1000)
+
+    }
+    function updateTimerDisplay(){
+        // Update current time text display.
+        if(player.getCurrentTime()>=player.getDuration()){
+            $(".video-watch-marker").addClass("watched");
+        }
+    }
 </script>
+
 </body>
 
 </html>

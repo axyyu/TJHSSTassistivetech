@@ -24,3 +24,11 @@
 .indented{
     padding-left: 10px;
 }
+
+/* Extra */
+.space{
+    content: " ";
+    display: block;
+    margin: 40px 0;
+    line-height: 40px;
+}
