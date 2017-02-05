@@ -291,7 +291,8 @@ header .header-content .header-content-inner p {
   color: deepskyblue;
 }
 .no-gutter > [class*='col-'] {
-  padding: 5px;
+  padding: 10px 5px;
+
 }
 .btn-default {
   color: #222222;

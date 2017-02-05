@@ -125,43 +125,6 @@
 
 <!-- Theme JavaScript -->
 <script src="js/creative.js"></script>
-<script>
-    // Set up Youtube
-
-    var player;
-    var width = $(window).width()*.70;
-    var height = (width/16) * 9;
-
-    $("#video-container").height(height);
-
-    document.addEventListener("DOMContentLoaded", function(event) {
-        var controller = new YTV('video-placeholder', {
-            playlist: 'PL7Vr8XNhXsJAKgFY8jlTUAgiMDByR3oaw',
-            autoplay: 'true'
-        });
-
-    });
-
-    /*
-    while(true){
-        $(".ytv-video").height(height);
-
-    }
-    */
-    /*
-    function onYouTubeIframeAPIReady() {
-        player = new YT.Player('video-placeholder', {
-            width: width,
-            height: height,
-            playerVars: {
-                color: 'white',
-                listType:'playlist',
-                list: 'PL7Vr8XNhXsJAKgFY8jlTUAgiMDByR3oaw'
-            }
-        });
-    }
-    */
-</script>
 </body>
 
 </html>
