@@ -23,7 +23,7 @@
     <link href="vendor/magnific-popup/magnific-popup.css" rel="stylesheet">
 
     <!-- Theme CSS -->
-    <link href="css/creative.css" rel="stylesheet">
+    <link href="CSS/creative.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -31,11 +31,14 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <script src="js/jquery-3.1.1.min.js" defer></script>
+
     <script src="https://www.youtube.com/iframe_api" defer></script>
     <![endif]-->
 
     <!--Custom-->
     <link href="CSS/style.css" rel="stylesheet">
+    <link href="CSS/ytv.css" type="text/css" rel="stylesheet" />
+    <script src="js/ytv.js" type="text/javascript"></script>
 
 </head>
 
@@ -79,23 +82,29 @@
 </header>
 
 <aside class="bg-dark">
-    <div class = "container">
+    <div class = "container" id="video-container">
         <div id="video-placeholder"></div>
     </div>
 </aside>
 
-<section id="contact">
-    <div class="container">
+<aside class="bg-dark">
+    <div class="container text-center">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
-                <h2 class="section-heading">Next Steps</h2>
-     <br>          <a class="btn btn-default btn-xl sr-button bl-button" href = "index.html#tutorials" style = "color: white">Choose Unit</a>
-            <a class="btn btn-default btn-xl sr-button bl-button" href = "phone.html" style = "color: white">Back to Phone</a>
-             <a class="btn btn-default btn-xl sr-button bl-button" href = "phoneunit3.html" style = "color: white">Unit 3: Email and Facetime</a>
+            </div>
+            <div class="col-lg-4 col-lg-offset-2 text-center">
+                <a href="phone.html">
+                    <p class="btn btn-default btn-xl sr-button">Choose Unit</p>
+                </a>
+            </div>
+            <div class="col-lg-4 text-center">
+                <a href="notfound.html">
+                    <p class="btn btn-default btn-xl sr-button">Unit 3 - Email and Facetime</p>
+                </a>
             </div>
         </div>
     </div>
-</section>
+</aside>
 
 <!-- jQuery -->
 <script src="vendor/jquery/jquery.min.js"></script>
@@ -113,22 +122,40 @@
 <script src="js/creative.js"></script>
 <script>
     // Set up Youtube
+
     var player;
-    var width = ($(window).width())/12*7;
+    var width = $(window).width()*.70;
     var height = (width/16) * 9;
 
+    $("#video-container").height(height);
 
-    function onYouTubeIframeAPIReady() {
-        player = new YT.Player('video-placeholder', {
-            width: width,
-            height: height,
-            playerVars: {
-                color: 'white',
-                listType:'playlist',
-                list: 'PL7Vr8XNhXsJAKgFY8jlTUAgiMDByR3oaw'
-            }
+    document.addEventListener("DOMContentLoaded", function(event) {
+        var controller = new YTV('video-placeholder', {
+            playlist: 'PLLcr5Bp5hc8v2Iwpgd1AFbmU0zpqpVEsl',
+            autoplay: 'true'
         });
-    }
+
+    });
+
+    /*
+     while(true){
+     $(".ytv-video").height(height);
+
+     }
+     */
+    /*
+     function onYouTubeIframeAPIReady() {
+     player = new YT.Player('video-placeholder', {
+     width: width,
+     height: height,
+     playerVars: {
+     color: 'white',
+     listType:'playlist',
+     list: 'PL7Vr8XNhXsJAKgFY8jlTUAgiMDByR3oaw'
+     }
+     });
+     }
+     */
 </script>
 </body>
 
