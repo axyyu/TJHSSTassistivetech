@@ -7,6 +7,7 @@
 	overflow: hidden;
 	font-family: arial, sans-serif;
 	height:inherit;
+	width:inherit;
 }
 .ytv-canvas ::-webkit-scrollbar{
 	border-left: 1px solid #000;
@@ -183,7 +184,7 @@
 /* Modifiers */
 .ytv-relative{
 	position: absolute;
-	width: 85vw;
+	width: inherit;
 	height: inherit;
 }
 .ytv-full{
