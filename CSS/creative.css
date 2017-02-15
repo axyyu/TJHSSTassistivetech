@@ -456,3 +456,8 @@ body {
   background-color: gray;
   border-color: black;
 }
+
+/*Add some padding to the button links at the bottom of the page so when the screen is small they don't stack with no space*/
+.container .row .col-lg-4 {
+  padding: 5px 0px;
+}
