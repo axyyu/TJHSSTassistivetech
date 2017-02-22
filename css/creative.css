@@ -293,9 +293,6 @@ header .header-content .header-content-inner p {
 .no-gutter > [class*='col-'] {
   padding: 5px;
 }
-.no-gutter {
-  background-color: white;
-}
 .btn-default {
   color: #222222;
   background-color: white;
