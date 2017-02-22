@@ -33,6 +33,13 @@
     line-height: 40px;
 }
 
+.spacer{
+    content: " ";
+    display: block;
+    margin: 1px 0;
+    line-height: 1px;
+}
+
 /* Youtube Video */
 #video-container{
 }
